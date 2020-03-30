@@ -1,4 +1,4 @@
-package com.github.wechatpay.payload;
+package com.github.wechatpay.payload.mch.special;
 
 import com.github.wechatpay.apiv3.WechatResponse;
 
@@ -9,7 +9,7 @@ import com.github.wechatpay.apiv3.WechatResponse;
  * @create: 2020-03-17 17:24
  */
 
-public class ApplymentResponse extends WechatResponse {
+public class SpecialMchApplymentResponse extends WechatResponse {
 
     private String applyment_id;
 

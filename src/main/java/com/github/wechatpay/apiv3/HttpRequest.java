@@ -9,7 +9,7 @@ import org.apache.http.HttpEntity;
  * @create: 2020-03-30 11:32
  */
 
-public abstract class HttpRequest extends HttpMessage {
+abstract class HttpRequest extends HttpMessage {
 
 
     public HttpRequest(String urlSuffix, String method) {

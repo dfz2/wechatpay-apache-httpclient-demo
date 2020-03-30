@@ -6,8 +6,12 @@ import com.github.wechatpay.apiv3.IWechatPayClient;
 import com.github.wechatpay.apiv3.RSAUtils;
 import com.github.wechatpay.payload.ImageUploadRequest;
 import com.github.wechatpay.payload.ImageUploadResponse;
-import com.github.wechatpay.payload.ModifySettleAccReponse;
-import com.github.wechatpay.payload.ModifySettleAccRequest;
+import com.github.wechatpay.payload.mch.level2.Level2MchApplymentReponse;
+import com.github.wechatpay.payload.mch.level2.Level2MchApplymentRequest;
+import com.github.wechatpay.payload.mch.special.ModifySettleAccReponse;
+import com.github.wechatpay.payload.mch.special.ModifySettleAccRequest;
+import com.github.wechatpay.payload.mch.special.SpecialMchApplymentRequest;
+import com.github.wechatpay.payload.mch.special.SpecialMchApplymentResponse;
 import com.google.gson.Gson;
 import com.wechat.pay.contrib.apache.httpclient.util.PemUtil;
 import org.junit.Test;
@@ -19,6 +23,8 @@ import java.security.PrivateKey;
 import java.security.cert.X509Certificate;
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.github.wechatpay.payload.mch.special.SpecialMchApplymentRequest.ContactInfoDTO;
 
 public class WechatApiv3Tests {
 
@@ -120,5 +126,41 @@ public class WechatApiv3Tests {
         /**
          * {"code":"NO_AUTH","message":"该商户不是本服务商进件的子商户，无权限操作","status":403,"urlSuffix":"","method":"","headers":{},"requestParamers":{}}
          */
+    }
+
+
+
+
+    @Test
+    public void testMchL2Applyment() throws Exception {
+        IClientProfile profile = new DefatultClientProfile();
+        IWechatPayClient client = new DefaultWechatPayClient(profile);
+        Level2MchApplymentRequest request = new Level2MchApplymentRequest();
+        request.setOrganization_type("2401");
+        request.setNeed_account_info(true);
+        Level2MchApplymentRequest.OrganizationCertInfoDTO organization_cert_info = new Level2MchApplymentRequest.OrganizationCertInfoDTO();
+        organization_cert_info.setOrganization_number("13132323231");
+        request.setOrganization_cert_info(organization_cert_info);
+
+        Level2MchApplymentReponse response = client.getResponse(request);
+        System.out.println((new Gson()).toJson(response));
+
+    }
+
+
+
+    @Test
+    public void testSpecialMchApplyment() throws Exception {
+        IClientProfile profile = new DefatultClientProfile();
+        IWechatPayClient client = new DefaultWechatPayClient(profile);
+        SpecialMchApplymentRequest request = new SpecialMchApplymentRequest();
+        request.setBusiness_code("APPLYMENT_00000000001");
+        ContactInfoDTO  contactInfoDTO= new ContactInfoDTO();
+        contactInfoDTO.setContact_email("test@YEA.NET");
+        request.setContact_info(contactInfoDTO);
+
+        SpecialMchApplymentResponse response = client.getResponse(request);
+        System.out.println((new Gson()).toJson(response));
+
     }
 }

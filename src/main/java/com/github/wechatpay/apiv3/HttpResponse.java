@@ -7,7 +7,7 @@ package com.github.wechatpay.apiv3;
  * @create: 2020-03-30 11:33
  */
 
-public class HttpResponse extends HttpMessage {
+class HttpResponse extends HttpMessage {
 
     private int status;
 

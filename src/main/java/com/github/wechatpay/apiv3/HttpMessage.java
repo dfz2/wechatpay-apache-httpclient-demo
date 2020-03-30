@@ -10,7 +10,7 @@ import java.util.Map;
  * @create: 2020-03-30 11:31
  */
 
-public class HttpMessage {
+class HttpMessage {
 
     private String urlSuffix;
     private String method;

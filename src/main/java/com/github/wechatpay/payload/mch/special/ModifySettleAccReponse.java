@@ -1,4 +1,4 @@
-package com.github.wechatpay.payload;
+package com.github.wechatpay.payload.mch.special;
 
 import com.github.wechatpay.apiv3.WechatResponse;
 

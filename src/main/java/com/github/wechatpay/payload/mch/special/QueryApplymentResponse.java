@@ -1,4 +1,4 @@
-package com.github.wechatpay.payload;
+package com.github.wechatpay.payload.mch.special;
 
 import com.github.wechatpay.apiv3.WechatResponse;
 
@@ -20,7 +20,7 @@ public class QueryApplymentResponse extends WechatResponse {
     private String sign_url;
     private String applyment_state;
     private String applyment_state_msg;
-    private List<AuditDetail> audit_detail;
+    private List<AuditDetailDTO> audit_detail;
 
 
     public String getBusiness_code() {
@@ -71,11 +71,43 @@ public class QueryApplymentResponse extends WechatResponse {
         this.applyment_state_msg = applyment_state_msg;
     }
 
-    public List<AuditDetail> getAudit_detail() {
+    public List<AuditDetailDTO> getAudit_detail() {
         return audit_detail;
     }
 
-    public void setAudit_detail(List<AuditDetail> audit_detail) {
+    public void setAudit_detail(List<AuditDetailDTO> audit_detail) {
         this.audit_detail = audit_detail;
+    }
+
+
+    public class AuditDetailDTO {
+        private String field;
+        private String field_name;
+        private String reject_reason;
+
+
+        public String getField() {
+            return field;
+        }
+
+        public void setField(String field) {
+            this.field = field;
+        }
+
+        public String getField_name() {
+            return field_name;
+        }
+
+        public void setField_name(String field_name) {
+            this.field_name = field_name;
+        }
+
+        public String getReject_reason() {
+            return reject_reason;
+        }
+
+        public void setReject_reason(String reject_reason) {
+            this.reject_reason = reject_reason;
+        }
     }
 }
