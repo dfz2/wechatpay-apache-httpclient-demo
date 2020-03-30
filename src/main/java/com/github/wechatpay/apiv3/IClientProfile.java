@@ -1,4 +1,4 @@
-package com.github.wechatpay.common;
+package com.github.wechatpay.apiv3;
 
 import java.security.PrivateKey;
 import java.security.cert.X509Certificate;

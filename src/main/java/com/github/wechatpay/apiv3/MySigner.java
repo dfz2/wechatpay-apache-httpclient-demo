@@ -1,4 +1,4 @@
-package com.github.wechatpay.common;
+package com.github.wechatpay.apiv3;
 
 /**
  * @program: wechatpay-apache-httpclient-demo

@@ -1,6 +1,6 @@
 package com.github.wechatpay.payload;
 
-import com.github.wechatpay.common.WechatRequest;
+import com.github.wechatpay.apiv3.WechatRequest;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.entity.ContentType;

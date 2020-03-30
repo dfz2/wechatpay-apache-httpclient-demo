@@ -1,4 +1,4 @@
-package com.github.wechatpay.common;
+package com.github.wechatpay.payload;
 
 /**
  * @program: wechatpay-apache-httpclient-demo

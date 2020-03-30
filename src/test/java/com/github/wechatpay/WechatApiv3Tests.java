@@ -1,39 +1,26 @@
 package com.github.wechatpay;
 
-import com.github.wechatpay.common.*;
+import com.github.wechatpay.apiv3.DefaultWechatPayClient;
+import com.github.wechatpay.apiv3.IClientProfile;
+import com.github.wechatpay.apiv3.IWechatPayClient;
+import com.github.wechatpay.apiv3.RSAUtils;
 import com.github.wechatpay.payload.ImageUploadRequest;
 import com.github.wechatpay.payload.ImageUploadResponse;
 import com.github.wechatpay.payload.ModifySettleAccReponse;
 import com.github.wechatpay.payload.ModifySettleAccRequest;
 import com.google.gson.Gson;
-import com.wechat.pay.contrib.apache.httpclient.Credentials;
-import com.wechat.pay.contrib.apache.httpclient.WechatPayHttpClientBuilder;
 import com.wechat.pay.contrib.apache.httpclient.util.PemUtil;
-import org.apache.commons.codec.digest.DigestUtils;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.ContentType;
-import org.apache.http.entity.mime.HttpMultipartMode;
-import org.apache.http.entity.mime.MultipartEntityBuilder;
-import org.apache.http.util.EntityUtils;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.nio.charset.StandardCharsets;
 import java.security.PrivateKey;
 import java.security.cert.X509Certificate;
 import java.util.ArrayList;
 import java.util.List;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
-public class WechatpayApacheHttpclientDemoApplicationTests {
+public class WechatApiv3Tests {
 
     String path = "C:\\apiclient_key.pem";
     private String merchantId ="";

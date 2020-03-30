@@ -1,4 +1,4 @@
-package com.github.wechatpay.common;
+package com.github.wechatpay.apiv3;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,7 +15,7 @@ public class HttpMessage {
     private String urlSuffix;
     private String method;
     protected Map<String, String> headers = new HashMap<>();
-    private Map<String, String> requestParamers = new HashMap<>();
+    private Map<String, Object> requestParamers = new HashMap<>();
 
     public HttpMessage(String urlSuffix, String method) {
         this.urlSuffix = urlSuffix;
@@ -30,7 +30,7 @@ public class HttpMessage {
         this.urlSuffix = urlSuffix;
     }
 
-    protected void putRequestParamers(String key, String value){
+    protected void putRequestParamers(String key, Object value){
         if (value != null) {
             this.requestParamers.put(key, value);
         }
@@ -52,11 +52,11 @@ public class HttpMessage {
         this.headers = headers;
     }
 
-    public Map<String, String> getRequestParamers() {
+    public Map<String, Object> getRequestParamers() {
         return requestParamers;
     }
 
-    public void setRequestParamers(Map<String, String> requestParamers) {
+    public void setRequestParamers(Map<String, Object> requestParamers) {
         this.requestParamers = requestParamers;
     }
 }

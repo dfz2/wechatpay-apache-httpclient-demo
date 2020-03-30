@@ -1,4 +1,4 @@
-package com.github.wechatpay.common;
+package com.github.wechatpay.apiv3;
 
 import org.apache.http.HttpEntity;
 
