@@ -18,7 +18,7 @@ import java.security.SecureRandom;
  * @create: 2020-03-29 21:33
  */
 
-public class MyCredentials implements Credentials {
+class MyCredentials implements Credentials {
     private static final Logger log = LoggerFactory.getLogger(MyCredentials.class);
 
     private static final String SYMBOLS =

@@ -84,6 +84,7 @@ public class WechatApiv3Tests {
 
     @Test
     public void testUpload() throws Exception {
+
         File file = new File("C:\\123.jpg");
         IClientProfile profile = new DefatultClientProfile();
         IWechatPayClient client = new DefaultWechatPayClient(profile);

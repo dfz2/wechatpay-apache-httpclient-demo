@@ -6,7 +6,7 @@ package com.github.wechatpay.apiv3;
  * @author: FZ.Dong
  * @create: 2020-03-29 21:32
  */
-public interface MySigner {
+interface MySigner {
 
     SignatureResult sign(byte[] message);
 

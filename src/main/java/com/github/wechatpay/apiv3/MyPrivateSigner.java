@@ -10,11 +10,11 @@ import java.util.Base64;
  * @create: 2020-03-29 21:35
  */
 
-public class MyPrivateSigner implements MySigner {
+class MyPrivateSigner implements MySigner {
     private String certificateSerialNumber;
     private PrivateKey privateKey;
 
-    public MyPrivateSigner(String serialNumber, PrivateKey privateKey) {
+    MyPrivateSigner(String serialNumber, PrivateKey privateKey) {
         this.certificateSerialNumber = serialNumber;
         this.privateKey = privateKey;
     }

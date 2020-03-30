@@ -10,12 +10,12 @@ import java.io.IOException;
  * @create: 2020-03-30 12:09
  */
 
-public class IOUtils {
+class IOUtils {
     private IOUtils(){
         throw new RuntimeException("工具类");
     }
 
-    public static void closeQuietly(Closeable closeable) {
+    static void closeQuietly(Closeable closeable) {
         try {
             if (closeable != null) {
                 closeable.close();

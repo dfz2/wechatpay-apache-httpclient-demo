@@ -100,9 +100,7 @@ public class DefaultWechatPayClient implements IWechatPayClient {
 
     @Override
     public void close() throws IOException {
-        if (httpClient != null) {
-            httpClient.close();
-        }
+       IOUtils.closeQuietly(httpClient);
     }
 
 }

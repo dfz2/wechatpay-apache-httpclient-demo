@@ -1,8 +1,6 @@
 package com.github.wechatpay.apiv3;
 
 
-import com.github.wechatpay.payload.Detail;
-
 /**
  * @program: wechatpay-apache-httpclient-demo
  * @description:
@@ -43,4 +41,44 @@ public class WechatResponse extends HttpResponse {
         this.detail = detail;
     }
 
+
+
+    public static class Detail {
+        private String field;
+        private String value;
+        private String issue;
+        private String location;
+
+        public String getField() {
+            return field;
+        }
+
+        public void setField(String field) {
+            this.field = field;
+        }
+
+        public String getValue() {
+            return value;
+        }
+
+        public void setValue(String value) {
+            this.value = value;
+        }
+
+        public String getIssue() {
+            return issue;
+        }
+
+        public void setIssue(String issue) {
+            this.issue = issue;
+        }
+
+        public String getLocation() {
+            return location;
+        }
+
+        public void setLocation(String location) {
+            this.location = location;
+        }
+    }
 }
