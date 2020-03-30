@@ -1,5 +1,6 @@
 package com.github.wechatpay.common;
 
+
 /**
  * @program: wechatpay-apache-httpclient-demo
  * @description:
@@ -10,6 +11,7 @@ package com.github.wechatpay.common;
 public class WechatResponse extends HttpResponse {
 
     private String code;
+    private Detail detail;
     private String message;
 
     public WechatResponse() {
@@ -31,12 +33,12 @@ public class WechatResponse extends HttpResponse {
         this.message = message;
     }
 
-
-    @Override
-    public String toString() {
-        return "WechatResponse{" +
-                "code='" + code + '\'' +
-                ", message='" + message + '\'' +
-                '}';
+    public Detail getDetail() {
+        return detail;
     }
+
+    public void setDetail(Detail detail) {
+        this.detail = detail;
+    }
+
 }

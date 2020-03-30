@@ -10,6 +10,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.util.EntityUtils;
 
 import java.io.IOException;
+import java.security.cert.X509Certificate;
 import java.util.Map;
 
 /**
@@ -78,6 +79,7 @@ public class DefaultWechatPayClient implements IWechatPayClient {
         if (request.getHttpEntity() != null) {
             builder.setEntity(request.getHttpEntity());
         }
+
         Map<String, String> headers = request.getHeaders();
         builder.addHeader("Accept", "application/json");
         for (String key : headers.keySet()) {
@@ -88,6 +90,10 @@ public class DefaultWechatPayClient implements IWechatPayClient {
             builder.addHeader("Content-Type", "multipart/form-data");
         } else {
             builder.addHeader("Content-Type", "application/json");
+        }
+
+        for (X509Certificate x509Cert : profile.getX509Certs()) {
+            builder.addHeader("Wechatpay-Serial", x509Cert.getSerialNumber().toString(16).toUpperCase());
         }
         return builder.build();
     }
